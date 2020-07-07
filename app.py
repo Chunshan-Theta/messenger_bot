@@ -1,25 +1,12 @@
 import os
 from flask import Flask, request, abort
-
-from linebot import (
-    LineBotApi, WebhookHandler
-)
-from linebot.exceptions import (
-    InvalidSignatureError
-)
-from linebot.models import *
-import logging
-
-from config import Channel_Access_Token, Channel_Secret
-from handler import line_reply_handler
-
+from pymessenger import Bot
 app = Flask(__name__)
 app.logger.setLevel(logging.DEBUG)
 
 
 
 ## MESSENGER
-from pymessenger import Bot
 PAGE_ACCESS_TOKEN="EAAIXsvACy2QBAOZBOdvLVGTOQ2NNZBYNCe94g4qWylFYguZCu9H6oov2xXKpDkMhZBgRZC94kVnY8AhXCaZCXGdJ95ezWvvo9BtQcL7SHSDrZCJB60HBZAa2VZAFqXVPnA8gVrZAPKDdsMQirqAB2u13EZCkyqDJbZBHHDrHODVHl0oWPaZBBE1h7Jl5O"
 MESSENGER_AUTH_TOKEN = "messenger_auth_token"
 bot = Bot(PAGE_ACCESS_TOKEN)
